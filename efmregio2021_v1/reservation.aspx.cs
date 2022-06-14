@@ -20,14 +20,40 @@ namespace efmregio2021_v1
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            if ( (date) date1.Value.ToString() < (date) date2.Value.ToString())
+            if ( DateTime.Parse(date2.Value.ToString())  < DateTime.Parse(date1.Value.ToString()))
+            {
 
-            int id_jour =  int.Parse( DropDownList1.SelectedValue.ToString()) ;
-            int montant = 0;
-            sc.Open();
-            SqlCommand cmd = new SqlCommand("select prodduit_nuit from jour where id_jour=" + id_jour, sc);
-            SqlDataReader dr = cmd.ExecuteReader();
-            while (dr.Read() )
+                int duree = DateTime.Parse(date1.Value.ToString()).Day - DateTime.Parse(date2.Value.ToString()).Day;
+
+                if (jour1 < jour2)
+                {
+                    int id_jour = int.Parse(DropDownList1.SelectedValue.ToString());
+                    int montant = 0;
+
+                    DateTime d1 = DateTime.Parse(date1.Value.ToString());
+                    int jour1 = day
+                    DateTime d1 = DateTime.Parse(date1.Value.ToString());
+
+
+                    sc.Open();
+                    SqlCommand cmd = new SqlCommand("select prodduit_nuit from jour where id_jour=" + id_jour, sc);
+                    SqlDataReader dr = cmd.ExecuteReader();
+                    while (dr.Read())
+                    {
+
+                    }
+                }
+                else
+                {
+                    Response.Write("<script>alert('verifiez date ')</script>");
+                }
+
+
+            }
+
+
+
+
         }
     }
 }
