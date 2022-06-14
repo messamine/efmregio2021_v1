@@ -1,0 +1,50 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="accueil.master.cs" Inherits="efmregio2021_v1.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+
+        <table style="font-family:Arial">
+<tr>
+<td colspan="2" style="width:1500px; height:80px; background-color:#CCCCFF;
+text-align:center">
+<h1>
+WebSite Header
+</h1>
+</td>
+</tr>
+<tr>
+<td style="height:500px; background-color:#DCDCDE; width:150px">
+<h3>Menu</h3>
+    <asp:Menu ID="Menu1" runat="server">
+        <Items>
+            <asp:MenuItem NavigateUrl="~/inscription.aspx" Text="INSCRIPTION" Value="INSCRIPTION"></asp:MenuItem>
+            <asp:MenuItem NavigateUrl="~/conexion.aspx" Text="Connexion" Value="Connexion"></asp:MenuItem>
+        </Items>
+    </asp:Menu>
+</td>
+<td style="height:500px; background-color:Silver; width:650px">
+        <div>
+
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </td>
+</tr>
+<tr>
+<td colspan="2" style="background-color:#666666; text-align:center">
+<b>Website Footer</b>
+</td>
+</tr>
+</table>
+    </form>
+</body>
+</html>
